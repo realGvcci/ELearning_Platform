@@ -1,0 +1,10 @@
+$kind: http-request
+name: '422 - Delete course that has enrollments'
+method: DELETE
+url: '{{baseUrl}}/api/courses/{{courseId}}'
+order: 19000
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 422", function () { pm.response.to.have.status(422); });

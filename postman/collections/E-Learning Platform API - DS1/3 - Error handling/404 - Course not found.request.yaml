@@ -1,0 +1,11 @@
+$kind: http-request
+name: '404 - Course not found'
+method: GET
+url: '{{baseUrl}}/api/courses/999999'
+order: 1000
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 404", function () { pm.response.to.have.status(404); });
+      pm.test("Error body has status = 404", function () { pm.expect(pm.response.json().status).to.eql(404); });

@@ -1,0 +1,22 @@
+$kind: http-request
+method: PUT
+url: '{{baseUrl}}/api/instructors/{{instructorId}}'
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "firstName": "Sarah",
+      "lastName": "Ben Ali",
+      "email": "{{instructorEmail}}",
+      "bio": "Senior Java developer and trainer"
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 200", function () { pm.response.to.have.status(200); });
+      pm.test("Bio updated", function () { pm.expect(pm.response.json().bio).to.include("trainer"); });

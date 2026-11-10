@@ -1,0 +1,17 @@
+$kind: collection
+description: "Run the collection in order with the Collection Runner (Run collection). Folders: 1 CRUD, 2 Custom queries, 3 Error handling, 4 Cleanup."
+variables:
+  baseUrl: http://localhost:8080
+  categoryId: ""
+  courseId: ""
+  enrollmentId: ""
+  instructorId: ""
+  instructorEmail: ""
+  reviewId: ""
+  studentId: ""
+  studentEmail: ""
+  student2Id: ""
+  tagId: ""
+  tagName: ""
+  tagId2: ""
+  draftCourseId: ""

@@ -1,0 +1,28 @@
+$kind: http-request
+name: 'Create course (OneToMany + ManyToMany)'
+method: POST
+url: '{{baseUrl}}/api/courses'
+order: 1000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "title": "Spring Boot from Zero to Hero",
+      "description": "Build REST APIs with Spring Boot and JPA",
+      "price": 49.90,
+      "level": "INTERMEDIATE",
+      "durationHours": 25,
+      "instructorId": {{instructorId}},
+      "categoryId": {{categoryId}},
+      "tagIds": [{{tagId}}, {{tagId2}}]
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 201", function () { pm.response.to.have.status(201); });
+      pm.collectionVariables.set("courseId", pm.response.json().id);
+      pm.test("Course is created as a draft with 2 tags", function () { var c = pm.response.json(); pm.expect(c.published).to.eql(false); pm.expect(c.tags.length).to.eql(2); });

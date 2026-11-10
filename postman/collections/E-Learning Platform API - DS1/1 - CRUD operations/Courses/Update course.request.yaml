@@ -1,0 +1,25 @@
+$kind: http-request
+method: PUT
+url: '{{baseUrl}}/api/courses/{{courseId}}'
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "title": "Spring Boot from Zero to Hero (2nd edition)",
+      "description": "Build REST APIs with Spring Boot and JPA",
+      "price": 59.90,
+      "level": "INTERMEDIATE",
+      "durationHours": 28,
+      "instructorId": {{instructorId}},
+      "categoryId": {{categoryId}},
+      "tagIds": [{{tagId}}, {{tagId2}}]
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 200", function () { pm.response.to.have.status(200); });

@@ -1,0 +1,10 @@
+$kind: http-request
+name: '404 - Unknown endpoint'
+method: GET
+url: '{{baseUrl}}/api/unknown'
+order: 2000
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 404", function () { pm.response.to.have.status(404); });

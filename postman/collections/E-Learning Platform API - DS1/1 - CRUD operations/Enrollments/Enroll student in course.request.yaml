@@ -1,0 +1,21 @@
+$kind: http-request
+method: POST
+url: '{{baseUrl}}/api/enrollments'
+order: 1000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "studentId": {{studentId}},
+      "courseId": {{courseId}}
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 201", function () { pm.response.to.have.status(201); });
+      pm.collectionVariables.set("enrollmentId", pm.response.json().id);
+      pm.test("Enrollment is ACTIVE with progress 0", function () { var e = pm.response.json(); pm.expect(e.status).to.eql("ACTIVE"); pm.expect(e.progress).to.eql(0); });

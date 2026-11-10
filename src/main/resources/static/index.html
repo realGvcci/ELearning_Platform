@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elevate — Learn without limits</title>
+<meta name="description" content="Discover practical courses and build skills with Elevate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17211d;--muted:#77817b;--line:#e8ece8;--paper:#f7f8f5;--white:#fff;--green:#245c45;--green2:#dcebe2;--lime:#d7f36a;--shadow:0 18px 50px rgba(28,45,35,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif}button,input,select{font:inherit}button{cursor:pointer}.shell{max-width:1440px;margin:auto;padding:0 5.2%}
+.topbar{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:rgba(255,255,255,.8);backdrop-filter:blur(16px);position:sticky;top:0;z-index:10;padding:0 5.2%}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);font:800 21px Manrope,sans-serif;letter-spacing:-1px}.brand-mark{width:34px;height:34px;border-radius:11px;background:var(--green);color:white;display:grid;place-items:center;font:800 17px Manrope}.nav{display:flex;align-items:center;gap:32px}.nav a{color:#69736d;text-decoration:none;font-size:13px;font-weight:600}.nav a.active,.nav a:hover{color:var(--green)}.nav-right{display:flex;align-items:center;gap:13px}.avatar{width:38px;height:38px;border-radius:50%;background:#e5eadd;color:var(--green);display:grid;place-items:center;font-weight:700;font-size:13px}.outline{border:1px solid var(--line);background:white;padding:11px 16px;border-radius:10px;font-weight:700;color:var(--ink);font-size:12px}
+.hero{padding:65px 0 44px;display:grid;grid-template-columns:1.08fr .92fr;gap:38px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:99px;background:#e9f0e8;color:var(--green);font-size:11px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:#6ca47e}.hero h1{font:800 clamp(42px,5.5vw,72px)/1.04 Manrope,sans-serif;letter-spacing:-4px;margin:20px 0 17px;max-width:650px}.hero h1 span{color:var(--green)}.hero p{color:var(--muted);line-height:1.8;font-size:15px;max-width:520px;margin:0}.hero-actions{display:flex;gap:12px;margin-top:27px}.primary{border:0;background:var(--green);color:white;border-radius:11px;padding:14px 20px;font-weight:700;font-size:13px;box-shadow:0 8px 18px rgba(36,92,69,.17)}.primary:hover{background:#194a35;transform:translateY(-1px)}.secondary{border:1px solid #dce3dc;background:white;color:var(--ink);border-radius:11px;padding:14px 19px;font-weight:700;font-size:13px}.hero-visual{min-height:330px;position:relative;border-radius:25px;overflow:hidden;background:#dfe9df;padding:26px;display:flex;align-items:flex-end}.hero-visual:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:#c4d7c6;top:-95px;right:-38px}.hero-visual:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;background:#b1cbb7;bottom:-105px;left:35px}.visual-copy{position:relative;z-index:1;background:rgba(255,255,255,.86);backdrop-filter:blur(12px);padding:20px;border-radius:17px;width:76%;box-shadow:var(--shadow)}.visual-copy small{color:var(--green);font-weight:800;letter-spacing:1px;text-transform:uppercase;font-size:9px}.visual-copy strong{display:block;font:800 22px Manrope;letter-spacing:-.8px;margin:7px 0}.visual-copy span{font-size:11px;color:var(--muted)}.floating{position:absolute;z-index:2;right:23px;top:25px;background:var(--green);color:white;border-radius:15px;padding:14px 17px;box-shadow:var(--shadow)}.floating b{font:800 24px Manrope;display:block}.floating small{font-size:10px;color:#d6e6db}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:5px 0 65px}.stat{background:white;border:1px solid var(--line);border-radius:15px;padding:19px 21px}.stat label{display:block;color:var(--muted);font-size:11px;font-weight:600}.stat strong{font:800 26px Manrope;letter-spacing:-1px;display:block;margin-top:6px}.stat em{font-style:normal;color:var(--green);font-size:10px;font-weight:700;margin-left:6px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}.section-head h2{font:800 30px Manrope;letter-spacing:-1.3px;margin:0}.section-head p{color:var(--muted);font-size:12px;margin:7px 0 0}.view-all{font-size:12px;font-weight:800;color:var(--green);text-decoration:none}
+.controls{display:flex;gap:12px;align-items:center;margin-bottom:20px}.search{flex:1;position:relative}.search input{width:100%;border:1px solid var(--line);border-radius:11px;background:white;padding:14px 15px 14px 43px;outline:none;font-size:12px}.search input:focus{border-color:#9ab8a4;box-shadow:0 0 0 3px #e7f0e9}.search span{position:absolute;left:15px;top:13px;color:#89938c}.select{border:1px solid var(--line);border-radius:11px;background:white;padding:13px 14px;color:#56625b;font-size:12px;outline:none}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 23px}.chip{border:1px solid var(--line);background:white;color:#68736c;border-radius:99px;padding:9px 14px;font-size:11px;font-weight:700}.chip.active{background:var(--green);color:white;border-color:var(--green)}
+.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.course{background:white;border:1px solid var(--line);border-radius:17px;overflow:hidden;transition:.2s;display:flex;flex-direction:column}.course:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.course-art{height:150px;padding:17px;position:relative;overflow:hidden;display:flex;align-items:flex-end}.course-art:before,.course-art:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.35)}.course-art:before{width:170px;height:170px;right:-20px;top:-80px}.course-art:after{width:115px;height:115px;right:45px;top:27px}.art-1{background:linear-gradient(135deg,#183e36,#6d9c7a)}.art-2{background:linear-gradient(135deg,#313d60,#8a9cc5)}.art-3{background:linear-gradient(135deg,#a56e4b,#e3b58c)}.art-4{background:linear-gradient(135deg,#594b7a,#a69bc8)}.art-5{background:linear-gradient(135deg,#32616a,#91c2bd)}.art-6{background:linear-gradient(135deg,#7b6940,#c8b879)}.art-icon{font-size:36px;position:relative;z-index:1;filter:drop-shadow(0 5px 8px #0002)}.level{position:absolute;right:13px;top:13px;background:#ffffffdc;border-radius:99px;padding:6px 9px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.4px}.course-body{padding:17px;display:flex;flex-direction:column;flex:1}.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:10px;font-weight:700}.course h3{font:800 16px/1.35 Manrope;letter-spacing:-.4px;margin:11px 0 7px}.desc{font-size:11px;color:var(--muted);line-height:1.6;min-height:36px}.teacher{display:flex;align-items:center;gap:8px;margin:15px 0;padding-top:12px;border-top:1px solid #f0f2ef}.teacher-avatar{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:#e8eee7;color:var(--green);font-size:9px;font-weight:800}.teacher span{font-size:10px;color:#59645d;font-weight:700}.course-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto}.price{font:800 18px Manrope;letter-spacing:-.5px}.enroll-btn{border:0;border-radius:9px;background:#e8f0e9;color:var(--green);padding:10px 13px;font-size:10px;font-weight:800}.enroll-btn:hover{background:var(--green);color:white}.empty{grid-column:1/-1;text-align:center;padding:50px 15px;background:white;border:1px dashed #dce4dc;border-radius:15px;color:var(--muted);font-size:13px}
+.bottom-cta{margin:70px 0 35px;padding:34px 38px;background:var(--green);color:white;border-radius:21px;display:flex;align-items:center;justify-content:space-between;gap:20px;overflow:hidden;position:relative}.bottom-cta:after{content:"";position:absolute;width:240px;height:240px;border:1px solid #ffffff25;border-radius:50%;right:22%;top:-150px}.bottom-cta h2{font:800 25px Manrope;letter-spacing:-1px;margin:0 0 7px}.bottom-cta p{color:#d2e0d7;font-size:12px;margin:0}.bottom-cta button{position:relative;z-index:1;background:var(--lime);color:#243320;border:0;border-radius:10px;padding:13px 17px;font-weight:800;font-size:11px;white-space:nowrap}
+footer{padding:24px 0 35px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#89928c;font-size:10px}
+.modal-backdrop{position:fixed;inset:0;background:#111b17a8;display:none;place-items:center;z-index:30;padding:20px}.modal-backdrop.show{display:grid}.modal{background:white;border-radius:19px;padding:25px;width:min(100%,450px);box-shadow:0 25px 80px #0003}.modal-top{display:flex;justify-content:space-between;align-items:center}.modal h3{font:800 21px Manrope;margin:0}.close{border:0;background:#f0f3ef;border-radius:50%;width:32px;height:32px;font-size:18px}.modal p{color:var(--muted);font-size:12px;line-height:1.6}.field{margin:15px 0}.field label{display:block;font-size:11px;font-weight:800;margin-bottom:7px}.field select{width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;background:white}.modal .primary{width:100%;margin-top:7px}.toast{position:fixed;right:22px;bottom:22px;background:#1e3328;color:white;padding:14px 18px;border-radius:11px;box-shadow:var(--shadow);font-size:12px;z-index:50;opacity:0;transform:translateY(12px);transition:.25s;pointer-events:none}.toast.show{opacity:1;transform:translateY(0)}.loading{padding:40px;text-align:center;color:var(--muted);grid-column:1/-1;font-size:12px}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-visual{min-height:260px}.course-grid{grid-template-columns:repeat(2,1fr)}.nav{gap:16px}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.topbar{height:66px}.nav{display:none}.hero{padding:43px 0 30px}.hero h1{letter-spacing:-2.5px}.hero-visual{min-height:230px}.stats{gap:8px;margin-bottom:45px}.stat{padding:14px}.stat strong{font-size:22px}.section-head{align-items:start}.section-head h2{font-size:25px}.controls{flex-direction:column;align-items:stretch}.course-grid{grid-template-columns:1fr}.course-art{height:165px}.bottom-cta{align-items:flex-start;flex-direction:column;padding:26px}.bottom-cta h2{font-size:22px}footer{gap:10px;flex-direction:column}.shell{padding:0 5%}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">e.</span> elevate<span style="color:#73917c">.</span></a>
+  <nav class="nav"><a class="active" href="#home">Home</a><a href="#courses">Explore courses</a><a href="#why">Why Elevate</a></nav>
+  <div class="nav-right"><button class="outline" onclick="document.querySelector('#courses').scrollIntoView({behavior:'smooth'})">Explore learning</button><div class="avatar">EL</div></div>
+</header>
+<main class="shell">
+<section class="hero" id="home">
+  <div>
+    <div class="eyebrow"><span class="dot"></span> Your next chapter starts here</div>
+    <h1>Make room for<br><span>what's next.</span></h1>
+    <p>Build skills that move you forward. Learn from experienced instructors, explore practical courses, and turn your curiosity into real-world capability.</p>
+    <div class="hero-actions"><button class="primary" onclick="document.querySelector('#courses').scrollIntoView({behavior:'smooth'})">Explore courses ↗</button><button class="secondary" onclick="loadStats()">Discover the platform</button></div>
+  </div>
+  <div class="hero-visual">
+    <div class="floating"><b id="heroCourseCount">—</b><small>courses to explore</small></div>
+    <div class="visual-copy"><small>Learning, reimagined</small><strong>Small steps.<br>Big momentum.</strong><span>Find your focus. Build your future.</span></div>
+  </div>
+</section>
+<section class="stats" id="why">
+  <div class="stat"><label>Available courses</label><strong id="statCourses">—</strong><em>Explore & grow</em></div>
+  <div class="stat"><label>Expert instructors</label><strong id="statInstructors">—</strong><em>Learn from the best</em></div>
+  <div class="stat"><label>Registered learners</label><strong id="statStudents">—</strong><em>Growing community</em></div>
+  <div class="stat"><label>Active learning paths</label><strong id="statEnrollments">—</strong><em>Keep progressing</em></div>
+</section>
+<section id="courses">
+  <div class="section-head"><div><h2>Find your next skill.</h2><p>Curated learning for curious minds and ambitious goals.</p></div><a class="view-all" href="#courses" onclick="resetFilters()">VIEW ALL COURSES ↗</a></div>
+  <div class="controls">
+    <div class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search courses, skills or topics..." oninput="renderCourses()"></div>
+    <select class="select" id="levelFilter" onchange="renderCourses()"><option value="">All levels</option><option value="BEGINNER">Beginner</option><option value="INTERMEDIATE">Intermediate</option><option value="ADVANCED">Advanced</option></select>
+    <select class="select" id="sortFilter" onchange="renderCourses()"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="title">Name: A–Z</option></select>
+  </div>
+  <div class="chips" id="categoryChips"><button class="chip active" data-category="" onclick="chooseCategory('')">All courses</button></div>
+  <div class="course-grid" id="courseGrid"><div class="loading">Connecting to your learning platform…</div></div>
+</section>
+<section class="bottom-cta"><div><h2>One skill can change your direction.</h2><p>Choose a course, commit to progress, and see where it takes you.</p></div><button onclick="document.querySelector('#courses').scrollIntoView({behavior:'smooth'})">Find your course ↗</button></section>
+<footer><span>© 2026 Elevate Learning Platform</span><span>Learn with purpose. Grow with confidence.</span></footer>
+</main>
+<div class="modal-backdrop" id="enrollModal" onclick="if(event.target===this)closeEnroll()">
+ <div class="modal"><div class="modal-top"><h3>Start learning</h3><button class="close" onclick="closeEnroll()">×</button></div><p id="modalCourseTitle">Choose a learner to enroll in this course.</p>
+ <div class="field"><label for="studentSelect">SELECT STUDENT</label><select id="studentSelect"><option value="">Loading learners…</option></select></div>
+ <button class="primary" id="confirmEnroll" onclick="submitEnrollment()">Confirm enrollment ↗</button>
+ </div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const API='/api';
+let courses=[], categories=[], students=[], selectedCourse=null, activeCategory='';
+const palette=['art-1','art-2','art-3','art-4','art-5','art-6'];
+const icons=['✳','⌘','◈','✦','▤','◉'];
+const money=v=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(Number(v||0));
+async function api(path,options={}) {
+  const response=await fetch(API+path,{...options,headers:{'Content-Type':'application/json',...(options.headers||{})}});
+  if(!response.ok){let message='Request failed ('+response.status+')';try{const e=await response.json();message=e.message||message}catch{}throw new Error(message)}
+  if(response.status===204)return null;
+  return response.json();
+}
+function toast(message){const el=document.getElementById('toast');el.textContent=message;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),3200)}
+async function init(){
+  await Promise.all([loadCourses(),loadCategories(),loadStats()]);
+}
+async function loadCourses(){
+  const grid=document.getElementById('courseGrid');
+  try{courses=await api('/courses');renderCourses()}
+  catch(e){grid.innerHTML='<div class="empty">Could not load courses. Make sure the Spring Boot application and database are running.<br><small>'+escapeHtml(e.message)+'</small></div>'}
+}
+async function loadCategories(){
+  try{categories=await api('/categories');const box=document.getElementById('categoryChips');box.innerHTML='<button class="chip active" data-category="" onclick="chooseCategory(\\'\\')">All courses</button>'+categories.map(c=>`<button class="chip" data-category="${escapeHtml(c.name)}" onclick="chooseCategory('${escapeJs(c.name)}')">${escapeHtml(c.name)}</button>`).join('')}
+  catch(e){console.warn('Categories unavailable',e)}
+}
+async function loadStats(){
+  const endpoints=[['/courses','statCourses'],['/instructors','statInstructors'],['/students','statStudents'],['/enrollments','statEnrollments']];
+  await Promise.all(endpoints.map(async ([url,id])=>{try{const data=await api(url);document.getElementById(id).textContent=Array.isArray(data)?data.length:'—';if(id==='statCourses')document.getElementById('heroCourseCount').textContent=data.length}catch(e){document.getElementById(id).textContent='—'}}));
+}
+function chooseCategory(name){activeCategory=name;document.querySelectorAll('.chip').forEach(b=>b.classList.toggle('active',b.dataset.category===name));renderCourses()}
+function resetFilters(){document.getElementById('searchInput').value='';document.getElementById('levelFilter').value='';document.getElementById('sortFilter').value='featured';chooseCategory('')}
+function renderCourses(){
+  const q=document.getElementById('searchInput').value.trim().toLowerCase();
+  const level=document.getElementById('levelFilter').value;
+  const sort=document.getElementById('sortFilter').value;
+  let list=courses.filter(c=>c.published!==false);
+  list=list.filter(c=>(!activeCategory||(c.category&&c.category.name===activeCategory))&&(!level||c.level===level)&&(!q||[c.title,c.description,c.instructor?.firstName,c.instructor?.lastName,c.category?.name,(c.tags||[]).map(t=>t.name).join(' ')].join(' ').toLowerCase().includes(q)));
+  if(sort==='price-low')list.sort((a,b)=>Number(a.price)-Number(b.price));
+  if(sort==='price-high')list.sort((a,b)=>Number(b.price)-Number(a.price));
+  if(sort==='title')list.sort((a,b)=>a.title.localeCompare(b.title));
+  const grid=document.getElementById('courseGrid');
+  if(!list.length){grid.innerHTML='<div class="empty">No courses match those filters. Try another search.</div>';return}
+  grid.innerHTML=list.map((c,i)=>`<article class="course">
+    <div class="course-art ${palette[i%palette.length]}"><span class="art-icon">${icons[i%icons.length]}</span><span class="level">${escapeHtml((c.level||'').toLowerCase())}</span></div>
+    <div class="course-body"><div class="meta"><span>${escapeHtml(c.category?.name||'Learning')}</span><span>${Number(c.durationHours||0)} HOURS</span></div>
+    <h3>${escapeHtml(c.title)}</h3><div class="desc">${escapeHtml(c.description||'A practical course designed to help you build valuable skills.')}</div>
+    <div class="teacher"><div class="teacher-avatar">${initials(c.instructor)}</div><span>${escapeHtml((c.instructor?.firstName||'Course')+' '+(c.instructor?.lastName||'Instructor'))}</span></div>
+    <div class="course-foot"><div class="price">${money(c.price)}</div><button class="enroll-btn" onclick="openEnroll(${c.id})">View & enroll ↗</button></div></div></article>`).join('');
+}
+function initials(i){return i?(String(i.firstName||'').charAt(0)+String(i.lastName||'').charAt(0)).toUpperCase():'EL'}
+function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function escapeJs(v){return String(v??'').replace(/\\/g,'\\\\').replace(/'/g,"\\'")}
+async function openEnroll(id){
+  selectedCourse=courses.find(c=>c.id===id);if(!selectedCourse)return;
+  document.getElementById('modalCourseTitle').textContent='Enroll in “'+selectedCourse.title+'”. Select your student profile below.';
+  document.getElementById('enrollModal').classList.add('show');
+  const select=document.getElementById('studentSelect');select.innerHTML='<option value="">Loading learners…</option>';
+  try{students=await api('/students');select.innerHTML='<option value="">Choose a student</option>'+students.map(s=>`<option value="${s.id}">${escapeHtml(s.fullName)} — ${escapeHtml(s.email)}</option>`).join('')}
+  catch(e){select.innerHTML='<option value="">Could not load students</option>';toast(e.message)}
+}
+function closeEnroll(){document.getElementById('enrollModal').classList.remove('show')}
+async function submitEnrollment(){
+  const studentId=Number(document.getElementById('studentSelect').value);
+  if(!studentId){toast('Please select a student first.');return}
+  const btn=document.getElementById('confirmEnroll');btn.disabled=true;btn.textContent='Enrolling…';
+  try{await api('/enrollments',{method:'POST',body:JSON.stringify({studentId,courseId:selectedCourse.id})});closeEnroll();toast('Enrollment successful. Your learning journey starts now!');loadStats()}
+  catch(e){toast(e.message)}
+  finally{btn.disabled=false;btn.textContent='Confirm enrollment ↗'}
+}
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+$kind: http-request
+name: 'Setup - create a draft course'
+method: POST
+url: '{{baseUrl}}/api/courses'
+order: 14000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "title": "Draft course",
+      "description": "Not yet published",
+      "price": 20,
+      "level": "BEGINNER",
+      "durationHours": 4,
+      "instructorId": {{instructorId}},
+      "categoryId": {{categoryId}}
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 201", function () { pm.response.to.have.status(201); });
+      pm.collectionVariables.set("draftCourseId", pm.response.json().id);

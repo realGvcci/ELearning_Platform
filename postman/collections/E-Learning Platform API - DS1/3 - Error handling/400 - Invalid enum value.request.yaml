@@ -1,0 +1,24 @@
+$kind: http-request
+name: '400 - Invalid enum value'
+method: POST
+url: '{{baseUrl}}/api/courses'
+order: 6000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "title": "Bad course",
+      "price": 10,
+      "level": "EXPERT",
+      "durationHours": 5,
+      "instructorId": {{instructorId}},
+      "categoryId": {{categoryId}}
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 400", function () { pm.response.to.have.status(400); });

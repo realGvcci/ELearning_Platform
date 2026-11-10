@@ -1,0 +1,21 @@
+$kind: http-request
+name: '409 - Duplicate instructor email'
+method: POST
+url: '{{baseUrl}}/api/instructors'
+order: 11000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "firstName": "Copy",
+      "lastName": "Cat",
+      "email": "{{instructorEmail}}"
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 409", function () { pm.response.to.have.status(409); });

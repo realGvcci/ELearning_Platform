@@ -1,0 +1,10 @@
+$kind: http-request
+name: 'Check deleted instructor -> 404'
+method: GET
+url: '{{baseUrl}}/api/instructors/{{instructorId}}'
+order: 11000
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 404", function () { pm.response.to.have.status(404); });

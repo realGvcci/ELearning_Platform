@@ -1,0 +1,10 @@
+$kind: http-request
+name: '400 - Wrong type in URL'
+method: GET
+url: '{{baseUrl}}/api/courses/abc'
+order: 9000
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 400", function () { pm.response.to.have.status(400); });

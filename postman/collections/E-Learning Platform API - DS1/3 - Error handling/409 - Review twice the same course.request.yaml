@@ -1,0 +1,21 @@
+$kind: http-request
+name: '409 - Review twice the same course'
+method: POST
+url: '{{baseUrl}}/api/reviews'
+order: 13000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "studentId": {{studentId}},
+      "courseId": {{courseId}},
+      "rating": 3
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 409", function () { pm.response.to.have.status(409); });

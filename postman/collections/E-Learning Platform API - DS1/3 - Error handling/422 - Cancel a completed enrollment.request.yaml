@@ -1,0 +1,10 @@
+$kind: http-request
+name: '422 - Cancel a completed enrollment'
+method: PATCH
+url: '{{baseUrl}}/api/enrollments/{{enrollmentId}}/cancel'
+order: 17000
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 422", function () { pm.response.to.have.status(422); });

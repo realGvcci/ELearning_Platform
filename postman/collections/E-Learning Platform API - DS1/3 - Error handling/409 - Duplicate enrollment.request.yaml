@@ -1,0 +1,20 @@
+$kind: http-request
+name: '409 - Duplicate enrollment'
+method: POST
+url: '{{baseUrl}}/api/enrollments'
+order: 12000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "studentId": {{studentId}},
+      "courseId": {{courseId}}
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 409", function () { pm.response.to.have.status(409); });

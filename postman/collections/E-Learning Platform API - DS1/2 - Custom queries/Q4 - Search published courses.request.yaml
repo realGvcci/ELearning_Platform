@@ -1,0 +1,19 @@
+$kind: http-request
+name: 'Q4 - Search published courses'
+method: GET
+url: '{{baseUrl}}/api/courses/search?keyword=spring&level=INTERMEDIATE&maxPrice=100'
+order: 4000
+queryParams:
+  - key: keyword
+    value: spring
+  - key: level
+    value: INTERMEDIATE
+  - key: maxPrice
+    value: '100'
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 200", function () { pm.response.to.have.status(200); });
+      pm.test("Response is a JSON array", function () { pm.expect(pm.response.json()).to.be.an("array"); });
+      pm.test("Array is not empty", function () { pm.expect(pm.response.json().length).to.be.above(0); });

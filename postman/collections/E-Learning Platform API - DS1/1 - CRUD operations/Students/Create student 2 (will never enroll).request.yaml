@@ -1,0 +1,22 @@
+$kind: http-request
+name: 'Create student 2 (will never enroll)'
+method: POST
+url: '{{baseUrl}}/api/students'
+order: 2000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "fullName": "Nour Jaziri",
+      "email": "nour{{$timestamp}}@mail.com",
+      "country": "Tunisia"
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 201", function () { pm.response.to.have.status(201); });
+      pm.collectionVariables.set("student2Id", pm.response.json().id);

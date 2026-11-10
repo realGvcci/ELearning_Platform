@@ -1,0 +1,20 @@
+$kind: http-request
+name: 'Update progress to 100 (auto COMPLETED)'
+method: PATCH
+url: '{{baseUrl}}/api/enrollments/{{enrollmentId}}/progress'
+order: 7000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "progress": 100
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 200", function () { pm.response.to.have.status(200); });
+      pm.test("Status is COMPLETED", function () { pm.expect(pm.response.json().status).to.eql("COMPLETED"); });

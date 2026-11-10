@@ -1,0 +1,21 @@
+$kind: http-request
+name: '400 - Invalid rating'
+method: POST
+url: '{{baseUrl}}/api/reviews'
+order: 8000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "studentId": {{studentId}},
+      "courseId": {{courseId}},
+      "rating": 9
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 400", function () { pm.response.to.have.status(400); });

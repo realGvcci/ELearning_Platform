@@ -1,0 +1,24 @@
+$kind: http-request
+name: '404 - Course with unknown instructor'
+method: POST
+url: '{{baseUrl}}/api/courses'
+order: 10000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "title": "Orphan",
+      "price": 10,
+      "level": "BEGINNER",
+      "durationHours": 5,
+      "instructorId": 999999,
+      "categoryId": {{categoryId}}
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 404", function () { pm.response.to.have.status(404); });
